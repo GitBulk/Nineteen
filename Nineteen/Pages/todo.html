@@ -44,10 +44,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Buy flower</td><td>No</td></tr>
-                <tr><td>Get shoes</td><td>No</td></tr>
-                <tr><td>Collet tickets</td><td>No</td></tr>
-                <tr><td>Call Joe</td><td>No</td></tr>
+                <tr ng-repeat="task in todo.data.items">
+                    <td>{{task.action}}</td>
+                    <td>{{task.done}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
