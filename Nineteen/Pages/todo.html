@@ -19,6 +19,16 @@
         function todoController() {
             var vm = this;
             vm.data = model;
+
+            vm.countIncompletedTask = function() {
+                var count = 0;
+                angular.forEach(vm.data.items, function (item) {
+                    if (!item.done) {
+                        count++;
+                    }
+                })
+                return count;
+            }
         }
     </script>
 </head>
@@ -26,7 +36,9 @@
     <div class="page-header">
         <h1>
             {{todo.data.user}}'s to do list
-            <span class="label label-default">{{todo.data.items.length}}</span>
+            <span class="label label-default" ng-hide="todo.countIncompletedTask() === 0">
+                {{todo.countIncompletedTask()}}
+            </span>
         </h1>
     </div>
     <div class="panel">
