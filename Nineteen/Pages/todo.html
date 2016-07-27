@@ -20,6 +20,10 @@
             var vm = this;
             vm.data = model;
 
+            vm.warningLevel = function () {
+                return vm.countIncompletedTask() < 3 ? "label-success" : "label-warning";
+            }
+
             vm.countIncompletedTask = function() {
                 var count = 0;
                 angular.forEach(vm.data.items, function (item) {
@@ -36,7 +40,7 @@
     <div class="page-header">
         <h1>
             {{todo.data.user}}'s to do list
-            <span class="label label-default" ng-hide="todo.countIncompletedTask() === 0">
+            <span class="label label-default" ng-class="todo.warningLevel()" ng-hide="todo.countIncompletedTask() === 0">
                 {{todo.countIncompletedTask()}}
             </span>
         </h1>
