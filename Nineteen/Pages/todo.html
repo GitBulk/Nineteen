@@ -64,7 +64,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="task in todo.data.items">
+                <tr ng-repeat="task in todo.data.items | orderBy:'action'">
                     <td>{{task.action}}</td>
                     <td><input type="checkbox" ng-model="task.done" /></td>
                     <td>{{task.done}}</td>
