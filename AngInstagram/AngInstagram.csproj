@@ -187,10 +187,13 @@
     <Content Include="img\gallery\.DS_Store" />
     <Content Include="img\prettyPhoto\.DS_Store" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\app.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\controllers\instagramController.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\services\instagramService.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
